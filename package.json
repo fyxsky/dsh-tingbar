@@ -1,6 +1,6 @@
 {
   "name": "dsh-tingbar",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "DeepSeek Harness 听说播放器插件（喜马拉雅 + 懒人听书双平台）：Host 端代理两个平台的搜索/专辑/目录/播放地址解析与扫码登录（免费曲直链，登录后解锁已购/VIP 内容），浏览器侧提供播放条与搜索/专辑/主播/我的面板与平台切换，并注册 ximalaya_play 模型工具",
   "type": "module",
   "main": "lib/index.js",
