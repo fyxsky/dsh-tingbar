@@ -78,8 +78,8 @@ dsh plugin --profile <profile> add /path/to/dsh-tingbar
 ```sh
 cd dsh-tingbar
 npm install
-npm pack                       # 生成 dsh-tingbar-0.2.0.tgz
-dsh plugin --profile <profile> add ./dsh-tingbar-0.2.0.tgz
+npm pack                       # 生成 dsh-tingbar-0.3.0.tgz
+dsh plugin --profile <profile> add ./dsh-tingbar-0.3.0.tgz
 ```
 
 安装后重启 `dsh web` 并刷新页面：
@@ -212,7 +212,8 @@ lib/
 
 ## 版本更新记录
 
-- **0.2.0**（本次）：修复顶部栏换行——面板头部标题「📻 有声书」与右侧「搜索 / 专辑 / 我的」标签在窗口较窄时会被 flex 折行。根因是 `.xmly-panel-head` 未显式禁折行、标题与标签未设 `white-space: nowrap`，且字号/内边距偏大挤占头部宽度。改为：头部 `flex-wrap: nowrap` + `min-width: 0`，标题 `white-space: nowrap; flex: none`，标签与平台切换按钮 `white-space: nowrap; flex: none`，并收窄头部间距（gap 10→8px）与按钮内边距（标签 4px 10px→4px 8px、平台按钮 4px 8px→4px 6px），窗口极窄时横向收缩间距而非换行。文案与图标不变。
+- **0.3.0**（本次）：进一步压缩顶部栏宽度——移除平台切换按钮上的「VIP」三字母文案（VIP 状态仍保留在悬停提示 `title` 里，未丢失），配合 0.2.0 的禁折行，确保标题 + 两个平台按钮 + 三个标签 + 关闭按钮在面板宽度内单行排下。
+- **0.2.0**：修复顶部栏换行——面板头部标题「📻 有声书」与右侧「搜索 / 专辑 / 我的」标签在窗口较窄时会被 flex 折行。根因是 `.xmly-panel-head` 未显式禁折行、标题与标签未设 `white-space: nowrap`，且字号/内边距偏大挤占头部宽度。改为：头部 `flex-wrap: nowrap` + `min-width: 0`，标题 `white-space: nowrap; flex: none`，标签与平台切换按钮 `white-space: nowrap; flex: none`，并收窄头部间距（gap 10→8px）与按钮内边距（标签 4px 10px→4px 8px、平台按钮 4px 8px→4px 6px），窗口极窄时横向收缩间距而非换行。文案与图标不变。
 - **0.1.0**：从 `jerryqx/dsh-ximalaya` 独立成项目，双平台（喜马拉雅 + 懒人听书）、平台切换、扫码登录、热搜与分类榜单、VIP 识别、真实头像、云端历史/收藏、断点续播、回环 http 源修复快进快退、自动连播修复，155 用例。
 
 ## License
