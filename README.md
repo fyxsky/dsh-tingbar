@@ -26,16 +26,6 @@
 
 > 详细研究记录见 [`docs/feasibility-report.md`](docs/feasibility-report.md)（协议逆向、接口探测、迭代记录）。
 
-## 界面预览
-
-| 搜索专辑 | 专辑详情 |
-|---|---|
-| ![搜索](assets/panel-search.png) | ![专辑](assets/panel-album.png) |
-
-| 我的订阅 | 关注的主播 |
-|---|---|
-| ![订阅](assets/panel-mine-subs.png) | ![主播](assets/panel-mine-anchors.png) |
-
 ## 特性
 
 - **双平台**：面板头部一键切换「喜马拉雅 / 懒人听书」，两个平台各自独立登录态、独立收藏、独立断点续播；侧栏播放条文案跟着当前平台变
