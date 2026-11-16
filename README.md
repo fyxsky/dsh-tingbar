@@ -78,8 +78,8 @@ dsh plugin --profile <profile> add /path/to/dsh-tingbar
 ```sh
 cd dsh-tingbar
 npm install
-npm pack                       # 生成 dsh-tingbar-0.1.0.tgz
-dsh plugin --profile <profile> add ./dsh-tingbar-0.1.0.tgz
+npm pack                       # 生成 dsh-tingbar-0.2.0.tgz
+dsh plugin --profile <profile> add ./dsh-tingbar-0.2.0.tgz
 ```
 
 安装后重启 `dsh web` 并刷新页面：
@@ -209,6 +209,11 @@ lib/
 
 **为什么插件里只能「取消收藏/取关」，不能新增收藏/关注？**
 经实测，点赞/关注的**写方向**接口有更严风控（需真实浏览器指纹签名），只有取消方向与订阅的两个方向可纯接口可靠完成。要新增 ♥ 收藏或关注，请在手机 App / 网页端操作，插件内随时可查看与取消。
+
+## 版本更新记录
+
+- **0.2.0**（本次）：修复顶部栏换行——面板头部标题「📻 有声书」与右侧「搜索 / 专辑 / 我的」标签在窗口较窄时会被 flex 折行。根因是 `.xmly-panel-head` 未显式禁折行、标题与标签未设 `white-space: nowrap`，且字号/内边距偏大挤占头部宽度。改为：头部 `flex-wrap: nowrap` + `min-width: 0`，标题 `white-space: nowrap; flex: none`，标签与平台切换按钮 `white-space: nowrap; flex: none`，并收窄头部间距（gap 10→8px）与按钮内边距（标签 4px 10px→4px 8px、平台按钮 4px 8px→4px 6px），窗口极窄时横向收缩间距而非换行。文案与图标不变。
+- **0.1.0**：从 `jerryqx/dsh-ximalaya` 独立成项目，双平台（喜马拉雅 + 懒人听书）、平台切换、扫码登录、热搜与分类榜单、VIP 识别、真实头像、云端历史/收藏、断点续播、回环 http 源修复快进快退、自动连播修复，155 用例。
 
 ## License
 
